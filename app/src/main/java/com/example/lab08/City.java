@@ -1,5 +1,5 @@
 package com.example.lab08;
-
+// class city(added for the part 4 of lab)
 public class City {
     private String city;
     private String province;
