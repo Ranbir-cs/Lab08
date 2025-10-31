@@ -7,7 +7,19 @@ public class CustomListTest {
         CustomList list = new CustomList();
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
-// This will fail initially because hasCity() doesn't exist
+    // This will fail initially because hasCity() doesn't exist
         assertTrue(list.hasCity(calgary));
     }
+    @Test
+    public void testDeleteCity() {
+        CustomList list = new CustomList();
+        City edmonton = new City("Edmonton", "AB");
+        list.addCity(edmonton);
+        assertTrue(list.hasCity(edmonton));
+        // delete and ensure it is removed
+        list.deleteCity(edmonton);
+        assertFalse(list.hasCity(edmonton));
+    }
+
 }
+
