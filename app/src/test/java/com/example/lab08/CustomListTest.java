@@ -7,9 +7,10 @@ public class CustomListTest {
         CustomList list = new CustomList();
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
-    // This will fail initially because hasCity() doesn't exist
+        // This will fail initially because hasCity() doesn't exist
         assertTrue(list.hasCity(calgary));
     }
+
     @Test
     public void testDeleteCity() {
         CustomList list = new CustomList();
@@ -21,5 +22,14 @@ public class CustomListTest {
         assertFalse(list.hasCity(edmonton));
     }
 
-}
+    @Test
+    public void countCities() {
+        CustomList list = new CustomList();
+        City montreal = new City("Montreal", "QC");
+        City vancouver = new City("Vancouver", "BC");
+        list.addCity(montreal);
+        list.addCity(vancouver);
+        assertEquals(2, list.countCities());
 
+    }
+}
